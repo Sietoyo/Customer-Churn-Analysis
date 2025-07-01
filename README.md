@@ -35,12 +35,45 @@ By implementing this end-to-end solution, **QuidMetrics** aims to deliver a high
 
 ---
 
-##  Dataset Description
+##  Data Description and Sources
 
-- **Source**: (https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction)
-- **Total Records**: ~15,819  
-- **Target Variable**: `Churn` (binary classification)  
-- **Features**: Behavioral, transactional, and demographic data  
+This dataset was obtained from [Kaggle](https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction) and contains customer-level data from an e-commerce platform, aimed at understanding the factors that contribute to customer churn.
+
+It includes **5,630 records**, each labeled to indicate whether a customer has **churned (`1`)** or remained **active (`0`)**, making it suitable for a binary classification task. The data spans behavioral, transactional, and demographic features.
+
+---
+
+### 🔹 Target Variable
+
+- `Churn`:  
+  - `1` – Customer has churned  
+  - `0` – Customer is active  
+
+---
+
+### 🔹 Key Features
+
+| Feature | Description |
+|--------|-------------|
+| `Tenure` | Months the customer has been active |
+| `PreferredLoginDevice` | Device used to access the platform |
+| `CityTier` | Customer’s city classification (1, 2, or 3) |
+| `PreferredPaymentMode` | Most used payment method |
+| `HourSpendOnApp` | Average hours spent on the app daily |
+| `OrderCount` | Total number of orders placed |
+| `CashbackAmount` | Total cashback received |
+| `OrderAmountHikeFromlastYear` | % increase in order value from the previous year |
+| `Complain` | Whether the customer has lodged complaints |
+| `SatisfactionScore` | Customer satisfaction rating (1–5) |
+| `MaritalStatus`, `Gender`, `NumberOfAddress`, etc. | Additional demographic/contextual data
+
+---
+
+### 🗂️ Files Used
+
+- `customer_data.csv` – Main dataset used for modeling
+- `segmented_customers.csv` – Output file with customers grouped by churn risk level
+ 
 
 ---
 
