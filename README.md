@@ -108,4 +108,26 @@ Segmented results were saved to a new file: `segmented_customers.csv`.
 ---
 
 ##  File Structure
+##  Tools and Libraries
+
+- Python (`Pandas`, `NumPy`)  
+- Scikit-learn (`RandomForestClassifier`, `GridSearchCV`)  
+- Matplotlib, Seaborn (Visualizations)  
+
+##  Key Insights
+
+- Feature importance revealed top predictors of churn, such as behavioral indicators and transaction patterns  
+- The Random Forest model provided high predictive power and interpretability  
+- Customer segmentation by churn risk allows for actionable targeting in retention campaigns  
+
+##  Next Steps / Recommendations
+
+- Integrate churn prediction into an automated CRM dashboard  
+- Design targeted marketing interventions for each segment  
+- Further explore time-based behavioral features (e.g., recency, frequency)  
+
+##  Conclusion
+
+This project showcases how machine learning can drive business value by predicting customer churn and guiding strategic customer engagement. Random Forest proved effective in modeling churn behavior with a transparent interpretation of feature importance and customer segmentation.
+
 
