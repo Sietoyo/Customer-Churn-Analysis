@@ -149,9 +149,9 @@ Using the Random Forest’s built-in feature importance, I visualized which vari
 
 To make the model actionable, I segmented customers based on their predicted churn probability:
 
-i. 🔴 **High Risk**: > 75% likelihood of churn  
-ii. 🟠 **Medium Risk**: 50–75%  
-iii. 🟢 **Low Risk**: ≤ 50%
+🔴 **High Risk**: > 75% likelihood of churn  
+🟠 **Medium Risk**: 50–75%  
+🟢 **Low Risk**: ≤ 50%
 
 This segmentation was saved into a new file, `segmented_customers.csv`, to support future marketing or retention campaigns.
 
@@ -161,9 +161,9 @@ This segmentation was saved into a new file, `segmented_customers.csv`, to suppo
 
 I used `GridSearchCV` to fine-tune the model and squeeze out better performance. Parameters optimized included:
 
-i. `n_estimators`: [100, 200, 300]
-ii. `max_depth`: [10, 20, 30]
-iii. `min_samples_split`: [2, 5, 10]
+- `n_estimators`: [100, 200, 300]
+- `max_depth`: [10, 20, 30]
+- `min_samples_split`: [2, 5, 10]
 
 A 5-fold cross-validation was used during tuning to ensure stability and generalization.
 
