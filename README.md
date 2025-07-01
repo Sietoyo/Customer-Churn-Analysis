@@ -20,15 +20,16 @@ Customer churn significantly impacts profitability in highly competitive e-comme
 
 To achieve this objective, **QuidMetrics** will:
 
-- **Load and analyze the provided customer dataset**, identifying key behavioral and transactional indicators linked to churn.
-- **Clean the dataset**, handling missing values and encoding categorical variables to ensure data quality.
-- **Engineer relevant features** that may improve model performance and provide deeper business insights.
-- **Develop and train a Random Forest classifier** to predict customer churn based on historical patterns.
-- **Evaluate model performance** using appropriate metrics such as ROC AUC, accuracy, precision, and recall to ensure robustness.
-- **Determine feature importance**, identifying which variables contribute most significantly to churn prediction.
-- **Segment customers** into risk categories (*Low*, *Medium*, *High*) based on predicted churn probability to guide targeted retention efforts.
-- **Explain the model outputs and insights** in clear, non-technical language for business stakeholders.
-- **Optimize model performance** through hyperparameter tuning using cross-validation techniques.
+i. **Load and analyze the provided customer dataset**, identifying key behavioral and transactional indicators linked to churn.  
+ii. **Clean the dataset**, handling missing values and encoding categorical variables to ensure data quality.  
+iii. **Engineer relevant features** that may improve model performance and provide deeper business insights.  
+iv. **Develop and train a Random Forest classifier** to predict customer churn based on historical patterns.  
+v. **Evaluate model performance** using appropriate metrics such as ROC AUC, accuracy, precision, and recall to ensure robustness.  
+vi. **Determine feature importance**, identifying which variables contribute most significantly to churn prediction.  
+vii. **Segment customers** into risk categories (*Low*, *Medium*, *High*) based on predicted churn probability to guide targeted retention efforts.  
+viii. **Explain the model outputs and insights** in clear, non-technical language for business stakeholders.  
+ix. **Optimize model performance** through hyperparameter tuning using cross-validation techniques.  
+
 
 By implementing this end-to-end solution, **QuidMetrics** aims to deliver a highly accurate and interpretable model that supports data-driven decision-making for customer retention in e-commerce.
 
@@ -86,10 +87,10 @@ This project followed a standard machine learning workflow, from cleaning raw da
 
 Before diving into modeling, I made sure the dataset was clean and ready:
 
-- Filled missing values in numeric columns using **mean imputation**
-- Converted categorical variables into numeric format using **one-hot encoding** via `pd.get_dummies()`
-- Defined `Churn` as the target variable
-- Split the data into **training (70%)** and **testing (30%)** sets to evaluate model performance fairly
+i. Filled missing values in numeric columns using **mean imputation**  
+ii. Converted categorical variables into numeric format using **one-hot encoding** via `pd.get_dummies()`  
+iii. Defined `Churn` as the target variable  
+iv. Split the data into **training (70%)** and **testing (30%)** sets to evaluate model performance fairly  
 
 ---
 
@@ -97,9 +98,9 @@ Before diving into modeling, I made sure the dataset was clean and ready:
 
 While EDA wasn’t the main focus here, I took a quick look to understand basic trends and relationships:
 
-- Checked churn distribution to understand class balance
-- Reviewed feature ranges and distributions
-- Spotted a few weak correlations and some dominant variables
+i. Checked churn distribution to understand class balance
+ii. Reviewed feature ranges and distributions
+iii. Spotted a few weak correlations and some dominant variables
 
 
 ---
@@ -120,32 +121,18 @@ The goal was to strike a balance between performance and overfitting, especially
 
 To measure model performance, the standard classification metric was used:
 
-- **Classification Report** (precision, recall, F1 score)
-- **Confusion Matrix**
-- **ROC AUC Score**
-
-Here’s how the model performed on the test set:
-
-| Metric               | Class 0 (Active) | Class 1 (Churned) | Macro Avg | Weighted Avg |
-|----------------------|------------------|-------------------|-----------|---------------|
-| **Precision**        | 0.95             | 0.93              | 0.94      | 0.95          |
-| **Recall**           | 0.99             | 0.74              | 0.87      | 0.95          |
-| **F1-Score**         | 0.97             | 0.82              | 0.90      | 0.95          |
-| **Accuracy**         | -                | -                 | -         | **0.95**      |
-| **ROC AUC Score**    | -                | -                 | -         | **0.97**      |
-
-**Confusion Matrix:**
-
-
+i. **Classification Report** (precision, recall, F1 score)
+ii. **Confusion Matrix**
+iii. **ROC AUC Score**
 
 ---
 
 The model demonstrated **strong overall accuracy (95%)** and an excellent **ROC AUC score of 0.97**, suggesting it’s highly capable of distinguishing between churned and retained customers.
 
 While the model performed almost flawlessly in identifying active customers (Class 0), it still achieved solid results in predicting churners (Class 1), with:
-- **Precision** of **93%**: Most of the churn predictions were correct
-- **Recall** of **74%**: It caught about three-quarters of actual churners
-- **F1 Score** of **82%**: A good balance between precision and recall
+i. **Precision** of **93%**: Most of the churn predictions were correct
+ii. **Recall** of **74%**: It caught about three-quarters of actual churners
+iii. **F1 Score** of **82%**: A good balance between precision and recall
 
 These results make the model suitable for real-world churn prediction use cases, where prioritizing **recall for churners** can help companies intervene early and retain high-risk customers.
 
@@ -154,10 +141,7 @@ These results make the model suitable for real-world churn prediction use cases,
 
 Using the Random Forest’s built-in feature importance, I visualized which variables had the most impact on churn predictions. This helped highlight key drivers such as:
 
-- Tenure
-- Order count
-- Cashback received
-- Order amount change from last year
+- Tenure, Order count, Cashback received, Order amount change from last year
 
 ---
 
@@ -165,21 +149,21 @@ Using the Random Forest’s built-in feature importance, I visualized which vari
 
 To make the model actionable, I segmented customers based on their predicted churn probability:
 
-- 🔴 **High Risk**: > 75% likelihood of churn  
-- 🟠 **Medium Risk**: 50–75%  
-- 🟢 **Low Risk**: ≤ 50%
+i. 🔴 **High Risk**: > 75% likelihood of churn  
+ii. 🟠 **Medium Risk**: 50–75%  
+iii. 🟢 **Low Risk**: ≤ 50%
 
 This segmentation was saved into a new file, `segmented_customers.csv`, to support future marketing or retention campaigns.
 
 ---
 
-### 🔧 Hyperparameter Tuning
+###  Hyperparameter Tuning
 
 I used `GridSearchCV` to fine-tune the model and squeeze out better performance. Parameters optimized included:
 
-- `n_estimators`: [100, 200, 300]
-- `max_depth`: [10, 20, 30]
-- `min_samples_split`: [2, 5, 10]
+i. `n_estimators`: [100, 200, 300]
+ii. `max_depth`: [10, 20, 30]
+iii. `min_samples_split`: [2, 5, 10]
 
 A 5-fold cross-validation was used during tuning to ensure stability and generalization.
 
@@ -188,9 +172,9 @@ A 5-fold cross-validation was used during tuning to ensure stability and general
 ##  File Structure
 ##  Tools and Libraries
 
-- Python (`Pandas`, `NumPy`)  
-- Scikit-learn (`RandomForestClassifier`, `GridSearchCV`)  
-- Matplotlib, Seaborn (Visualizations)  
+i. Python (`Pandas`, `NumPy`)  
+ii. Scikit-learn (`RandomForestClassifier`, `GridSearchCV`)  
+iii. Matplotlib, Seaborn (Visualizations)  
 
 ##  Key Insights
 
