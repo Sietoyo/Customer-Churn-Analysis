@@ -194,15 +194,10 @@ A 5-fold cross-validation was used during tuning to ensure stability and general
 
 ##  Key Insights
 
-- Feature importance revealed top predictors of churn, such as behavioral indicators and transaction patterns  
-- The Random Forest model provided high predictive power and interpretability  
-- Customer segmentation by churn risk allows for actionable targeting in retention campaigns  
+i. Feature importance revealed top predictors of churn, such as behavioral indicators and transaction patterns  
+ii. The Random Forest model provided high predictive power and interpretability  
+iii. Customer segmentation by churn risk allows for actionable targeting in retention campaigns  
 
-##  Next Steps / Recommendations
-
-- Integrate churn prediction into an automated CRM dashboard  
-- Design targeted marketing interventions for each segment  
-- Further explore time-based behavioral features (e.g., recency, frequency)  
 
 ##  Conclusion
 
