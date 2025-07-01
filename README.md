@@ -98,9 +98,9 @@ Before diving into modeling, I made sure the dataset was clean and ready:
 
 While EDA wasn’t the main focus here, I took a quick look to understand basic trends and relationships:
 
-i. Checked churn distribution to understand class balance
-ii. Reviewed feature ranges and distributions
-iii. Spotted a few weak correlations and some dominant variables
+- Checked churn distribution to understand class balance
+- Reviewed feature ranges and distributions
+- Spotted a few weak correlations and some dominant variables
 
 
 ---
