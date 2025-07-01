@@ -69,7 +69,7 @@ It includes **5,630 records**, each labeled to indicate whether a customer has *
 
 ---
 
-### 🗂️ Files Used
+###  Files Used
 
 - `customer_data.csv` – Main dataset used for modeling
 - `segmented_customers.csv` – Output file with customers grouped by churn risk level
@@ -80,72 +80,88 @@ It includes **5,630 records**, each labeled to indicate whether a customer has *
 ##  Methodology
 
 ###  Data Preprocessing
+This project followed a standard machine learning workflow, from cleaning raw data to building and evaluating a predictive model. Here's a breakdown of how it all came together:
 
-- Missing values were handled using mean imputation for numeric columns  
-- Categorical variables were encoded using one-hot encoding (`pd.get_dummies()`)  
-- Defined target variable (`Churn`)  
-- Split feature matrix (X) and target (y) into train-test sets  
+
+###  Data Preprocessing
+
+Before diving into modeling, I made sure the dataset was clean and ready:
+
+- Filled missing values in numeric columns using **mean imputation**
+- Converted categorical variables into numeric format using **one-hot encoding** via `pd.get_dummies()`
+- Defined `Churn` as the target variable
+- Split the data into **training (70%)** and **testing (30%)** sets to evaluate model performance fairly
 
 ---
 
 ###  Exploratory Data Analysis (EDA)
 
-*Note: EDA was briefly implied. Visualizations such as class distributions, correlation heatmaps, or univariate plots can be added for a more detailed portfolio.*
+While EDA wasn’t the main focus here, I took a quick look to understand basic trends and relationships:
+
+- Checked churn distribution to understand class balance
+- Reviewed feature ranges and distributions
+- Spotted a few weak correlations and some dominant variables
+
+> *Note: In a future version, I plan to add visualizations like heatmaps, bar plots, and class balance charts to make the portfolio even more insightful.*
 
 ---
 
 ###  Model Building: Random Forest Classifier
 
-**Parameters:**
+I chose the **Random Forest Classifier** due to its robustness, ability to handle mixed data types, and interpretability. The model was trained using the following parameters:
 
 - `n_estimators = 200`  
 - `max_depth = 20`  
-- `min_samples_split = 2`  
+- `min_samples_split = 2`
 
-**Data Split:**  
-- Trained on 70% training data  
-- Tested on 30% holdout set  
+The goal was to strike a balance between performance and overfitting, especially given the moderately sized dataset.
 
 ---
 
-###  Evaluation Metrics
+###  Model Evaluation
 
-- Classification Report  
-- Confusion Matrix  
-- ROC AUC Score  
+To measure how well the model performed, I used:
 
-*The model achieved good performance in identifying churners with a focus on precision and recall for the positive class (`Churn = 1`).*
+- **Classification Report** (precision, recall, F1 score)
+- **Confusion Matrix**
+- **ROC AUC Score**
+
+The model did a solid job at identifying churners, particularly focusing on **recall and precision** for the positive class (`Churn = 1`), which is critical for retention strategies.
 
 ---
 
 ###  Feature Importance
 
-Feature importances were extracted and visualized using Seaborn to determine which factors most influenced the churn prediction.
+Using the Random Forest’s built-in feature importance, I visualized which variables had the most impact on churn predictions. This helped highlight key drivers such as:
+
+- Tenure
+- Order count
+- Cashback received
+- Order amount change from last year
 
 ---
 
 ###  Customer Segmentation by Churn Risk
 
-Using churn probabilities, customers were segmented into:
+To make the model actionable, I segmented customers based on their predicted churn probability:
 
-- **High Risk**: Probability > 0.75  
-- **Medium Risk**: 0.5 < Probability ≤ 0.75  
-- **Low Risk**: Probability ≤ 0.5  
+- 🔴 **High Risk**: > 75% likelihood of churn  
+- 🟠 **Medium Risk**: 50–75%  
+- 🟢 **Low Risk**: ≤ 50%
 
-Segmented results were saved to a new file: `segmented_customers.csv`.
+This segmentation was saved into a new file, `segmented_customers.csv`, to support future marketing or retention campaigns.
 
 ---
 
-### Hyperparameter Tuning
+### 🔧 Hyperparameter Tuning
 
-- Conducted using `GridSearchCV`  
-- **Parameters tuned:**
-  - `n_estimators`: [100, 200, 300]  
-  - `max_depth`: [10, 20, 30]  
-  - `min_samples_split`: [2, 5, 10]  
-- **Cross-validation**: 5-fold  
+I used `GridSearchCV` to fine-tune the model and squeeze out better performance. Parameters optimized included:
 
-*Optimized model can be further used in production scenarios.*
+- `n_estimators`: [100, 200, 300]
+- `max_depth`: [10, 20, 30]
+- `min_samples_split`: [2, 5, 10]
+
+A 5-fold cross-validation was used during tuning to ensure stability and generalization.
 
 ---
 
