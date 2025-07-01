@@ -106,7 +106,7 @@ While EDA wasn’t the main focus here, I took a quick look to understand basic 
 
 ###  Model Building: Random Forest Classifier
 
-I chose the **Random Forest Classifier** due to its robustness, ability to handle mixed data types, and interpretability. The model was trained using the following parameters:
+**Random Forest Classifier** is preferred due to its robustness, ability to handle mixed data types, and interpretability. The model was trained using the following parameters:
 
 - `n_estimators = 200`  
 - `max_depth = 20`  
@@ -118,15 +118,37 @@ The goal was to strike a balance between performance and overfitting, especially
 
 ###  Model Evaluation
 
-To measure how well the model performed, I used:
+To measure model performance, the standard classification metric was used:
 
 - **Classification Report** (precision, recall, F1 score)
 - **Confusion Matrix**
 - **ROC AUC Score**
 
-The model did a solid job at identifying churners, particularly focusing on **recall and precision** for the positive class (`Churn = 1`), which is critical for retention strategies.
+Here’s how the model performed on the test set:
+
+| Metric               | Class 0 (Active) | Class 1 (Churned) | Macro Avg | Weighted Avg |
+|----------------------|------------------|-------------------|-----------|---------------|
+| **Precision**        | 0.95             | 0.93              | 0.94      | 0.95          |
+| **Recall**           | 0.99             | 0.74              | 0.87      | 0.95          |
+| **F1-Score**         | 0.97             | 0.82              | 0.90      | 0.95          |
+| **Accuracy**         | -                | -                 | -         | **0.95**      |
+| **ROC AUC Score**    | -                | -                 | -         | **0.97**      |
+
+**Confusion Matrix:**
+
+
 
 ---
+
+The model demonstrated **strong overall accuracy (95%)** and an excellent **ROC AUC score of 0.97**, suggesting it’s highly capable of distinguishing between churned and retained customers.
+
+While the model performed almost flawlessly in identifying active customers (Class 0), it still achieved solid results in predicting churners (Class 1), with:
+- **Precision** of **93%**: Most of the churn predictions were correct
+- **Recall** of **74%**: It caught about three-quarters of actual churners
+- **F1 Score** of **82%**: A good balance between precision and recall
+
+These results make the model suitable for real-world churn prediction use cases, where prioritizing **recall for churners** can help companies intervene early and retain high-risk customers.
+
 
 ###  Feature Importance
 
