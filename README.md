@@ -79,7 +79,6 @@ It includes **5,630 records**, each labeled to indicate whether a customer has *
 
 ##  Methodology
 
-###  Data Preprocessing
 This project followed a standard machine learning workflow, from cleaning raw data to building and evaluating a predictive model. Here's a breakdown of how it all came together:
 
 
@@ -102,7 +101,6 @@ While EDA wasn’t the main focus here, I took a quick look to understand basic 
 - Reviewed feature ranges and distributions
 - Spotted a few weak correlations and some dominant variables
 
-> *Note: In a future version, I plan to add visualizations like heatmaps, bar plots, and class balance charts to make the portfolio even more insightful.*
 
 ---
 
