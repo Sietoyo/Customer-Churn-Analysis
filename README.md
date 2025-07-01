@@ -87,10 +87,10 @@ This project followed a standard machine learning workflow, from cleaning raw da
 
 Before diving into modeling, I made sure the dataset was clean and ready:
 
-i. Filled missing values in numeric columns using **mean imputation**  
-ii. Converted categorical variables into numeric format using **one-hot encoding** via `pd.get_dummies()`  
-iii. Defined `Churn` as the target variable  
-iv. Split the data into **training (70%)** and **testing (30%)** sets to evaluate model performance fairly  
+- Filled missing values in numeric columns using **mean imputation**  
+- Converted categorical variables into numeric format using **one-hot encoding** via `pd.get_dummies()`  
+- Defined `Churn` as the target variable  
+- Split the data into **training (70%)** and **testing (30%)** sets to evaluate model performance fairly  
 
 ---
 
@@ -121,18 +121,18 @@ The goal was to strike a balance between performance and overfitting, especially
 
 To measure model performance, the standard classification metric was used:
 
-i. **Classification Report** (precision, recall, F1 score)
-ii. **Confusion Matrix**
-iii. **ROC AUC Score**
+- **Classification Report** (precision, recall, F1 score)
+- **Confusion Matrix**
+- **ROC AUC Score**
 
 ---
 
 The model demonstrated **strong overall accuracy (95%)** and an excellent **ROC AUC score of 0.97**, suggesting it’s highly capable of distinguishing between churned and retained customers.
 
 While the model performed almost flawlessly in identifying active customers (Class 0), it still achieved solid results in predicting churners (Class 1), with:
-i. **Precision** of **93%**: Most of the churn predictions were correct
-ii. **Recall** of **74%**: It caught about three-quarters of actual churners
-iii. **F1 Score** of **82%**: A good balance between precision and recall
+- **Precision** of **93%**: Most of the churn predictions were correct
+- **Recall** of **74%**: It caught about three-quarters of actual churners
+- **F1 Score** of **82%**: A good balance between precision and recall
 
 These results make the model suitable for real-world churn prediction use cases, where prioritizing **recall for churners** can help companies intervene early and retain high-risk customers.
 
