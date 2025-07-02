@@ -173,14 +173,14 @@ A 5-fold cross-validation was used during tuning to ensure stability and general
 ##  File Structure
 ##  Tools and Libraries
 
-i. Python (`Pandas`, `NumPy`)  
-ii. Scikit-learn (`RandomForestClassifier`, `GridSearchCV`)  
+i.   Python (`Pandas`, `NumPy`)  
+ii.  Scikit-learn (`RandomForestClassifier`, `GridSearchCV`)  
 iii. Matplotlib, Seaborn (Visualizations)  
 
 ##  Key Insights
 
-i. Feature importance revealed top predictors of churn, such as behavioral indicators and transaction patterns  
-ii. The Random Forest model provided high predictive power and interpretability  
+i.   Feature importance revealed top predictors of churn, such as behavioral indicators and transaction patterns  
+ii.  The Random Forest model provided high predictive power and interpretability  
 iii. Customer segmentation by churn risk allows for actionable targeting in retention campaigns  
 
 
