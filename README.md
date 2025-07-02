@@ -20,15 +20,16 @@ Customer churn significantly impacts profitability in highly competitive e-comme
 
 To achieve this objective, **QuidMetrics** will:
 
-– **Load and analyze the provided customer dataset**, identifying key behavioral and transactional indicators linked to churn.  
-– **Clean the dataset**, handling missing values and encoding categorical variables to ensure data quality.  
-– **Engineer relevant features** that may improve model performance and provide deeper business insights.  
-– **Develop and train a Random Forest classifier** to predict customer churn based on historical patterns.  
-– **Evaluate model performance** using appropriate metrics such as ROC AUC, accuracy, precision, and recall to ensure robustness.  
-– **Determine feature importance**, identifying which variables contribute most significantly to churn prediction.  
-– **Segment customers** into risk categories (*Low*, *Medium*, *High*) based on predicted churn probability to guide targeted retention efforts.  
-– **Explain the model outputs and insights** in clear, non-technical language for business stakeholders.  
-– **Optimize model performance** through hyperparameter tuning using cross-validation techniques.  
+- **Load and analyze the provided customer dataset**, identifying key behavioral and transactional indicators linked to churn.  
+- **Clean the dataset**, handling missing values and encoding categorical variables to ensure data quality.  
+- **Engineer relevant features** that may improve model performance and provide deeper business insights.  
+- **Develop and train a Random Forest classifier** to predict customer churn based on historical patterns.  
+- **Evaluate model performance** using appropriate metrics such as ROC AUC, accuracy, precision, and recall to ensure robustness.  
+- **Determine feature importance**, identifying which variables contribute most significantly to churn prediction.  
+- **Segment customers** into risk categories (*Low*, *Medium*, *High*) based on predicted churn probability to guide targeted retention efforts.  
+- **Explain the model outputs and insights** in clear, non-technical language for business stakeholders.  
+- **Optimize model performance** through hyperparameter tuning using cross-validation techniques.  
+
 
 
 By implementing this end-to-end solution, **QuidMetrics** aims to deliver a highly accurate and interpretable model that supports data-driven decision-making for customer retention in e-commerce.
