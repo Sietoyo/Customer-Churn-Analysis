@@ -1,5 +1,5 @@
 # E-Commerce Churn Analysis Using Random Forest
-!(image_alt) https://github.com/Sietoyo/Customer-Churn-Analysis/blob/main/churn.png?raw=true
+![Alt text describing the image]https://github.com/Sietoyo/Customer-Churn-Analysis/blob/main/churn.png?raw=true
 ##  Overview
 
 Customer retention is vital for the long-term success of e-commerce businesses. Understanding which customers are likely to churn can help businesses proactively engage with them, reducing potential revenue loss. In this project, a machine learning model was developed to predict customer churn using historical behavioral data.
